@@ -9,7 +9,7 @@ pipeline {
     registyUrl = "oriakle.azurecr.io"
     IMAGE_NAME = "nodejswebapp"
     IMAGE_TAG = "v1.0.0"
-    registryCredential  = "oriakle"
+    registryCredential  = "acr-image-push"
     }
     stages { 
         stage('SCM Checkout') {
