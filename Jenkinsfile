@@ -5,16 +5,16 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
      }
     environment {
-    ACR_NAME = "boboacrr"
-    registyUrl = "boboacrr.azurecr.io"
+    ACR_NAME = "oriakle"
+    registyUrl = "oriakle.azurecr.io"
     IMAGE_NAME = "nodejswebapp"
     IMAGE_TAG = "v1.0.0"
-    registryCredential  = "karo-acr"
+    registryCredential  = "leroy-acr"
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-           git branch: 'main', url: 'https://github.com/ooghenekaro/nodejs-webapp-2.git'
+           git branch: 'main', url: 'https://github.com/oriakle/nodejs-webapp-2.git'
             }
         }
         // run sonarqube test
@@ -23,7 +23,7 @@ pipeline {
                 scannerHome = tool 'ibt-sonarqube';
             }
             steps {
-              withSonarQubeEnv(credentialsId: 'ibt-sonar', installationName: 'IBT sonarqube') {
+              withSonarQubeEnv(credentialsId: 'oriakle-sonar', installationName: 'IBT sonarqube') {
                 sh "${scannerHome}/bin/sonar-scanner"
               }
             }
