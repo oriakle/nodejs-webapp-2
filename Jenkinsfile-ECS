@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('ORIAKLE_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = credentials('ORIAKLE_SECRET_ACCESS_KEY')
+        AWS_ACCESS_KEY_ID = credentials('leroy-ecr')
+        AWS_SECRET_ACCESS_KEY = credentials('leroy-ecr')
         AWS_DEFAULT_REGION = "us-east-1"
     }
     stages {
